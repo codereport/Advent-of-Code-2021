@@ -1,8 +1,8 @@
 boardValue ← {
    ⍝ ⍺ = calls, ⍵ = board
-   p ← ,\⍺                   ⍝ prefixes
-   i ← ⊃⍸(5∨.=+/,+⌿)∘(⍵∊⊢)¨p ⍝ index
-   l ← ⊃⌽i⊃p                 ⍝ last number
+   p ← ,\⍺                 ⍝ prefixes
+   i ← ⊃⍸(5∊+/,+⌿)∘(⍵∊⊢)¨p ⍝ index
+   l ← ⊃⌽i⊃p               ⍝ last number
    i,l×+/,⍵×~⍵∊i⊃p
 }
 
