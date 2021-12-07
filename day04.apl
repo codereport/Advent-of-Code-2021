@@ -1,9 +1,7 @@
 boardValue ← {
    ⍝ ⍺ = calls, ⍵ = board
-   p ← ,\⍺                 ⍝ prefixes
-   i ← ⊃⍸(5∊+/,+⌿)∘(⍵∊⊢)¨p ⍝ index
-   l ← ⊃⌽i⊃p               ⍝ last number
-   i,l×+/,⍵×~⍵∊i⊃p
+   i ← ⊃⍸(5∊+/,+⌿)∘(⍵∊⊢)¨p←,\⍺
+   i,(⊃⌽c)×+/,⍵×~⍵∊c←i⊃p
 }
 
 data ← ⊃⎕NGET 'C:/data/04.txt' 1
